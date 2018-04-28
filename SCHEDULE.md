@@ -43,8 +43,24 @@ We don't have to do 💩 here!
 
 * **Compound Components Lecture** (_11:00AM - 11:10AM_)
   * Describe "compound" components
+  * Component components are components that share some "implicit" state
   * Go over how they can be used to provide a set of related components that work together, with constraints
+  * Component components let you share _implicit_ state
+  * Implicit is state that doesn't have to be explicitly shared between components, which you'd normally do through props
+  * Props are the API for explicit state
+  * __Maybe have a section on implicit vs explicit state?__
 * **Compound Components Exercises** (_11:10AM - 11:30AM_)
+  * How to communicate implicit state
+  * Talk about the OG approach of using `React.cloneElement`
+    * Discuss pitfalls of `React.cloneElement`
+    * Show how it breaks with deeply nested compound components
+    * Generally a pattern you be aware of, but avoid if possible
+  * Discuss using Context to make compound components more flexible
+    * _Might have to do context lesson first?_
+  * Maybe use the [Header/Section][1] example as a starting point
+  * Restricting access to component components
+    * Defining them as `static` properties on the parent component
+    * Using a render prop to provide these components
   * Write some exercises for compound components
 * **Controlled Components Lecture** (_11:30AM - 11:40AM_)
   * Describe controlled components
@@ -69,7 +85,10 @@ We don't have to do 💩 here!
 **Duration**: 1 hour, 45 minutes
 
 * **Higher Order Components Lecture** (_1:00PM - 1:10PM_)
-  * Go over what they are, give examples, etc
+  * Go over what they are, give examples, et
+  * Setting the right `displayName`
+  * Handling namespace collisions
+  * Forwarding refs with `React.forwardRef`
 * **Higher Order Components Exercises** (_1:10PM - 1:30:PM_)
   * Exercises
 * **Portals** (_1:30PM - 2:45PM_)
@@ -185,3 +204,6 @@ We don't have to do 💩 here!
   * Improve Error Boundary by isolating it to one section (e.g., if the sidebar component is crashing, don't take out the main content)
 * **Testing and Performance** (_3:30PM - 5:30PM_)
   * <p style="color: red">Collaborate with Emma and Ken here</p>
+
+
+[1]: https://medium.com/@Heydon/managing-heading-levels-in-design-systems-18be9a746fa3
