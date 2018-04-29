@@ -78,7 +78,6 @@ We don't have to do 💩 here!
 
 We don't have to do 💩 here!
 
-
 ## Afternoon Session, Part 1
 **Time**: 1:00PM - 2:45PM
 
@@ -205,5 +204,42 @@ We don't have to do 💩 here!
 * **Testing and Performance** (_3:30PM - 5:30PM_)
   * <p style="color: red">Collaborate with Emma and Ken here</p>
 
+
+# Unscheduled Sessions
+
+These are some sessions that may be valuable, but that don't fit in with our current schedule.
+
+* **Managing and Deriving State** (_N/A_)
+  * What to put in state, what to derive?
+  * Avoid using state as a proxy for data that can be derived from props
+    * If your state is just some pure derivation of props that is _always_ synced with new props, it's not really state
+  * State should be _local_ and mostly independent from props.
+  * The appropriate use cases for `getDerivedStateFromProps`
+  * Using memoized functions (`memoize-one` library is a good one)
+  * Explain how you can use memoized component methods to derive state in `render` without having to worry about using another lifecycle
+  * Using `setState` callbacks to run code after state has been updated
+    * A good pattern if you need to notify some parent of local state changes (input element notifies parent in an `AutoComplete` component)
+  * Using updater functions in `setState`
+    * Being able to return `null` to signify that no state update is needed
+
+* **Render-less Components** (_N/A_)
+  * Components that don't actually render anything to the DOM
+  * A good example of how React can let you implement a declarative API for imperative functionality
+  * For example, we could make a `Speak` component using a render-less component and the `SpeechSynthesis` API
+  * A "Container" component can be thought of as a render-less component, since it doesn't actually render anything new itself.
+  * You can also define components that render absolutely nothing. They may have _side effects_
+  * `react-helmet` is a good example (re-implementing could be an exercise)
+
+* **Streaming Server Rendering** (_N/A_)
+  * Show off `renderToNodeStream`
+  * Basic SSR patterns
+  * Send down initial data and hydrate state
+
+* **Optimizing Renders** (_N/A_)
+  * Show off virtualization techniques
+    * Have users implement virtualized list as exercise?
+  * `PureComponent` and `shouldComponentUpdate`
+  * When to optimize (read: not too early)
+  * The benefits of immutable data
 
 [1]: https://medium.com/@Heydon/managing-heading-levels-in-design-systems-18be9a746fa3
