@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import PortalCodealong from './portals/codealong';
+import PortalApp from './portals/portal-app';
 
 
 class Tabs extends Component {
@@ -14,9 +14,8 @@ class App extends Component {
   render() {
     return (
       <div id="app-root">
-        <PortalCodealong />;
+        <PortalApp />
       </div>
-      <div id="portal-root" />
     )
   }
 }

@@ -1,0 +1,92 @@
+.pageWrapper {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: salmon;
+}
+
+.containerDiv {
+  position: relative;
+
+  height: 25%;
+  width: 25%;
+
+  text-align: center;
+
+  border-radius: 5px;
+
+  filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.15));
+
+  /** DO NOT CHANGE */
+  overflow-y: scroll;
+  overflow-x: hidden;
+  /** DO NOT CHANGE */
+}
+
+.lightTheme {
+  background-color: white;
+  color: black;
+
+  border: 1px solid black;
+}
+
+.darkTheme {
+  background-color: black;
+  color: white;
+
+  border: 3px solid white;
+}
+
+.buttonWrapper {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.settingsButton {
+  height: 15px;
+  width: auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid black;
+  border-radius: 250px;
+
+  font-size: 10px;
+
+  cursor: pointer;
+}
+
+.regularModal {
+  position: absolute;
+  top: 25px;
+  left: 0;
+
+  border: 1px solid black;
+
+  background-color: white;
+
+  filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.15));
+
+  width: 200px;
+  height: 100px;
+}
+
+.portalModal {
+  position: absolute;
+
+  border: 1px solid black;
+
+  background-color: white;
+
+  filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.15));
+
+  width: 200px;
+  height: 100px;
+}
