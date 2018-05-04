@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import PortalApp from './portals/portal-app';
+import PortalApp from './portals-solution/portal-app';
 
 
 class Tabs extends Component {

@@ -34,12 +34,14 @@
   border: 1px solid black;
 }
 
+/**
 .darkTheme {
   background-color: black;
   color: white;
 
   border: 3px solid white;
 }
+*/
 
 .settingsButtonWrapper {
   position: absolute;
@@ -50,28 +52,6 @@
 .settingsButton {
   height: 15px;
   width: auto;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  border: 1px solid black;
-  border-radius: 250px;
-
-  font-size: 10px;
-
-  cursor: pointer;
-}
-
-.infoTargetWrapper {
-  position: absolute;
-  bottom: 5px;
-  right: 5px;
-}
-
-.infoTarget {
-  height: 15px;
-  width: 15px;
 
   display: flex;
   justify-content: center;
@@ -98,46 +78,4 @@
 
   width: 200px;
   height: 100px;
-}
-
-.portalModal {
-  position: absolute;
-
-  border: 1px solid black;
-
-  padding: 20px;
-
-  background-color: white;
-
-  filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.15));
-
-  width: auto;
-  height: 50px;
-}
-
-.portalTooltip {
-  position: absolute;
-
-  padding: 20px;
-
-  background-color: white;
-
-  filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.15));
-
-  width: auto;
-  height: 50px;
-}
-
-.portalTooltip::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 50%;
-  width: 0;
-  height: 0;
-  border: 10px solid transparent;
-  border-right-color: white;
-  border-left: 0;
-  margin-left: -10px;
-  margin-bottom: -10px;
 }

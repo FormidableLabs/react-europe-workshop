@@ -2,6 +2,12 @@ resources:
 * accessibility
 * positioning libraries/tools
 * react docs
+https://github.com/reactjs/react-modal
+
+Positioning libs
+https://github.com/RobertMenke/react-popover
+popper.js
+https://github.com/HubSpot/tether
 
 
 Portals Lecture w/ Slides - keep to about 10 minutes

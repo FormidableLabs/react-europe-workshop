@@ -62,22 +62,12 @@ export class PortalTooltip extends Component {
 
     return ReactDOM.createPortal(
       <div className="portalTooltip" style={{left: `${coordinates.x}px`, top: `${coordinates.y}px`}}>
-        This is a blurb about Portals displayed with { currentTheme }
+        This is a blurb about Portals displayed with { currentTheme === 'lightTheme' ? 'Light Theme' : 'Dark Theme' }
       </div>,
       this.portalElement
     );
   }
 };
-
-// export class RegularModal extends Component {
-//   render() {
-//     return (
-//       <div className="regularModal">
-//         Hi I'm a regular modal!!
-//       </div>
-//     );
-//   }
-// };
 
 export class PortalApp extends Component {
   constructor() {
@@ -99,7 +89,6 @@ export class PortalApp extends Component {
       this.setState({
         modalCoordinates: {
           x: boundingRect.left,
-          // adding whatever padding we want to the bottom coordinate
           y: boundingRect.bottom + 10
         }
       })
@@ -113,8 +102,7 @@ export class PortalApp extends Component {
       this.setState({
         tooltipCoordinates: {
           x: boundingRect.right + 20,
-          // adding whatever padding we want to the bottom coordinate
-          y: boundingRect.bottom - 46
+          y: boundingRect.bottom - (46 + (15/2))
         }
       })
     }
@@ -201,10 +189,4 @@ export class PortalApp extends Component {
 };
 
 export default PortalApp;
-
-// EXERCISES:
-// 1. Create a portal-based tooltip for another click or hover target within the container div
-// 2. Have it display info passed from the parent container or trigger an event in the parent container, or both
-// 3. Bonus: Use a positioning library (see resources in the README for this folder) to position your tooltip instead of DOM measuring
-// 4. Bonus: Feel free to get creative with styling, functionality, etc. - the only thing you can't do is change the parent container to allow visible overflow!
 
