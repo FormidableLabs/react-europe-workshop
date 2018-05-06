@@ -1,12 +1,11 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import PortalApp from './portals-solution/portal-app';
-
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import PortalApp from "./portals-solution/portal-app";
 
 class Tabs extends Component {
   render() {
-   return "Tabs"
+    return "Tabs";
   }
 }
 
@@ -16,7 +15,7 @@ class App extends Component {
       <div id="app-root">
         <PortalApp />
       </div>
-    )
+    );
   }
 }
 
