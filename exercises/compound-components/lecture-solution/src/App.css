@@ -1,0 +1,48 @@
+body {
+  font-family: 'Fira Sans', sans-serif;
+}
+
+
+.nav {
+  list-style: none;
+  display: flex;
+  border-bottom: 1px solid #efefef;
+  height: 50px;
+  margin: 0;
+  background-color: #000021;
+  color: #ffffff;
+  align-items: center;
+  padding: 0px 15px;
+}
+
+.nav li {
+  padding-right: 10px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-split {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nav-active a {
+  color: #35f0f5;
+}
+
+.searchbar {
+  border: none;
+  padding: 4px;
+  border-radius: 2px;
+  min-width: 150px;
+  margin-right: 10px;
+  outline: none;
+}
+
+.logo {
+  margin-right: 10px;
+}
+

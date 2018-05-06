@@ -88,6 +88,7 @@ We don't have to do 💩 here!
   * Setting the right `displayName`
   * Handling namespace collisions
   * Forwarding refs with `React.forwardRef`
+  * Use `hoist-non-react-statics` to preserve static properties
 * **Higher Order Components Exercises** (_1:10PM - 1:30:PM_)
   * Exercises
 * **Portals** (_1:30PM - 2:45PM_)
@@ -108,6 +109,7 @@ We don't have to do 💩 here!
 
 * **What's New in 16.3** (_3:00PM - 5:30PM_)
   * <p style="color: red">Defer to Ken here</p>
+  * Show how `memoize-one` can be used to create an object values and update methods that can be passed to a Context Provider
 
 
 # Day 2
