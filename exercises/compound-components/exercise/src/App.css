@@ -1,0 +1,88 @@
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+This is a React Workshop.
+You don't need to look here.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ */
+#root {
+  display: flex;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+.stepper {
+  margin: 50px auto;
+  padding: 15px;
+  border: 1px solid #efefef;
+  border-radius: 4px;
+  text-align: center;
+  max-width: 80%;
+}
+
+.stepper-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.status-item {
+  cursor: pointer;
+}
+
+.status-divider {
+  width: 15px;
+  display: inline-block;
+  height: 1px;
+  border-top: 1px solid #afb1b3;
+  margin: 5px;
+  margin-top: 7px;
+}
+
+.step-btn {
+  background-color: #0064ff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  outline: none;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.step-btn:disabled {
+  background-color: #8bb8ff;
+  cursor: not-allowed;
+}
