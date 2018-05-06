@@ -54,6 +54,7 @@ export class PortalApp extends Component {
           <p>Here is some more content about portals</p>
           <p>Here is some more content about portals</p>
           <p>Here is some more content about portals</p>
+          <p>Here is some more content about portals</p>
         </div>
       </div>
     );
