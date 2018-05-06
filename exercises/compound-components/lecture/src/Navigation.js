@@ -3,7 +3,7 @@ import cx from "classnames";
 import "./App.css";
 
 export default class Navigation extends React.Component {
-  // Pretend this is dynamic and must be read from state! 
+  // Pretend this is dynamic and must be read from state!
   state = { active: "Home" };
   render() {
     const { items } = this.props;
