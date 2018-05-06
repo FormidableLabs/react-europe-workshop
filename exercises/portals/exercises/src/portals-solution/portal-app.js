@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
 
-import './portal-app.css';
+import "./portal-app.css";
 
 export class PortalModal extends Component {
   constructor() {
     super();
 
-    this.portalElement = document.createElement('div');
+    this.portalElement = document.createElement("div");
   }
 
   componentDidMount() {
@@ -22,16 +22,27 @@ export class PortalModal extends Component {
     const { coordinates, currentTheme, handleChangeTheme } = this.props;
 
     return ReactDOM.createPortal(
-      <div className="portalModal" style={{left: `${coordinates.x}px`, top: `${coordinates.y}px`}}>
+      <div
+        className="portalModal"
+        style={{ left: `${coordinates.x}px`, top: `${coordinates.y}px` }}
+      >
         Select the theme for the parent component:
         <form>
-          <input type="radio" id="theme1"
-            name="theme" value="lightTheme" checked={currentTheme === 'lightTheme'}
+          <input
+            type="radio"
+            id="theme1"
+            name="theme"
+            value="lightTheme"
+            checked={currentTheme === "lightTheme"}
             onChange={handleChangeTheme}
           />
           <label htmlFor="theme1">Light Theme</label>
-          <input type="radio" id="theme2"
-            name="theme" value="darkTheme" checked={currentTheme === 'darkTheme'}
+          <input
+            type="radio"
+            id="theme2"
+            name="theme"
+            value="darkTheme"
+            checked={currentTheme === "darkTheme"}
             onChange={handleChangeTheme}
           />
           <label htmlFor="theme2">Dark Theme</label>
@@ -40,13 +51,13 @@ export class PortalModal extends Component {
       this.portalElement
     );
   }
-};
+}
 
 export class PortalTooltip extends Component {
   constructor() {
     super();
 
-    this.portalElement = document.createElement('div');
+    this.portalElement = document.createElement("div");
   }
 
   componentDidMount() {
@@ -61,13 +72,17 @@ export class PortalTooltip extends Component {
     const { coordinates, currentTheme } = this.props;
 
     return ReactDOM.createPortal(
-      <div className="portalTooltip" style={{left: `${coordinates.x}px`, top: `${coordinates.y}px`}}>
-        This is a blurb about Portals displayed with { currentTheme === 'lightTheme' ? 'Light Theme' : 'Dark Theme' }
+      <div
+        className="portalTooltip"
+        style={{ left: `${coordinates.x}px`, top: `${coordinates.y}px` }}
+      >
+        This is a blurb about Portals displayed with{" "}
+        {currentTheme === "lightTheme" ? "Light Theme" : "Dark Theme"}
       </div>,
       this.portalElement
     );
   }
-};
+}
 
 export class PortalApp extends Component {
   constructor() {
@@ -76,7 +91,7 @@ export class PortalApp extends Component {
     this.state = {
       isModalOpen: false,
       isTooltipOpen: false,
-      containerTheme: 'lightTheme',
+      containerTheme: "lightTheme",
       modalCoordinates: {},
       tooltipCoordinates: {}
     };
@@ -91,7 +106,7 @@ export class PortalApp extends Component {
           x: boundingRect.left,
           y: boundingRect.bottom + 10
         }
-      })
+      });
     }
   };
 
@@ -102,9 +117,9 @@ export class PortalApp extends Component {
       this.setState({
         tooltipCoordinates: {
           x: boundingRect.right + 20,
-          y: boundingRect.bottom - (46 + (15/2))
+          y: boundingRect.bottom - (46 + 15 / 2)
         }
-      })
+      });
     }
   };
 
@@ -114,7 +129,7 @@ export class PortalApp extends Component {
     }
 
     this.setState({
-      isModalOpen: !this.state.isModalOpen,
+      isModalOpen: !this.state.isModalOpen
     });
   };
 
@@ -124,18 +139,21 @@ export class PortalApp extends Component {
     }
 
     this.setState({
-      isTooltipOpen: !this.state.isTooltipOpen,
+      isTooltipOpen: !this.state.isTooltipOpen
     });
   };
 
   handleChangeTheme = e => {
-    this.setState({
-      containerTheme: e.target.value
-    }, () => {
-      this.setState({
-        isModalOpen: false
-      })
-    });
+    this.setState(
+      {
+        containerTheme: e.target.value
+      },
+      () => {
+        this.setState({
+          isModalOpen: false
+        });
+      }
+    );
   };
 
   render() {
@@ -143,33 +161,43 @@ export class PortalApp extends Component {
       <div className="pageWrapper">
         <div className={`containerDiv ${this.state.containerTheme}`}>
           <h1>Portals!!!!</h1>
-          <div className="settingsButtonWrapper" ref={el => { this.buttonWrapper = el }}>
-            <button className="settingsButton" onClick={this.toggleModal}>settings</button>
-            {
-              this.state.isModalOpen
-              ? (
-                  <PortalModal
-                    coordinates={this.state.modalCoordinates}
-                    currentTheme={this.state.containerTheme}
-                    handleChangeTheme={this.handleChangeTheme}
-                  />
-                )
-              : null
-            }
+          <div
+            className="settingsButtonWrapper"
+            ref={el => {
+              this.buttonWrapper = el;
+            }}
+          >
+            <button className="settingsButton" onClick={this.toggleModal}>
+              settings
+            </button>
+            {this.state.isModalOpen ? (
+              <PortalModal
+                coordinates={this.state.modalCoordinates}
+                currentTheme={this.state.containerTheme}
+                handleChangeTheme={this.handleChangeTheme}
+              />
+            ) : null}
           </div>
-          <div className="infoTargetWrapper" ref={el => { this.infoTargetWrapper = el }}>
-            <div className="infoTarget" onMouseEnter={this.toggleTooltip} onMouseLeave={this.toggleTooltip}>i</div>
-            {
-              this.state.isTooltipOpen
-              ? (
-                  <PortalTooltip
-                    coordinates={this.state.tooltipCoordinates}
-                    currentTheme={this.state.containerTheme}
-                    handleChangeTheme={this.handleChangeTheme}
-                  />
-                )
-              : null
-            }
+          <div
+            className="infoTargetWrapper"
+            ref={el => {
+              this.infoTargetWrapper = el;
+            }}
+          >
+            <div
+              className="infoTarget"
+              onMouseEnter={this.toggleTooltip}
+              onMouseLeave={this.toggleTooltip}
+            >
+              i
+            </div>
+            {this.state.isTooltipOpen ? (
+              <PortalTooltip
+                coordinates={this.state.tooltipCoordinates}
+                currentTheme={this.state.containerTheme}
+                handleChangeTheme={this.handleChangeTheme}
+              />
+            ) : null}
           </div>
           <p>Portals are great!</p>
           <p>Here is some more content about portals</p>
@@ -185,8 +213,7 @@ export class PortalApp extends Component {
         </div>
       </div>
     );
-  };
-};
+  }
+}
 
 export default PortalApp;
-
