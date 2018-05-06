@@ -1,16 +1,17 @@
-import React, {Component} from 'react';
-import cx from 'classnames';
-import './App.css';
+import React, { Component } from "react";
+import cx from "classnames";
+import "./App.css";
 
 const NavigationContext = React.createContext(null);
 
-const NavigationItem = ({label, to}) => (
+const NavigationItem = ({ label, to }) => (
   <NavigationContext.Consumer>
     {activeItem => (
       <li
         className={cx({
-          'nav-active': activeItem === label,
-        })}>
+          "nav-active": activeItem === label
+        })}
+      >
         <a href={to}>{label}</a>
       </li>
     )}
@@ -24,10 +25,10 @@ export default class Navigation extends React.Component {
   static Split = NavigationSplit;
   // We're storing this in state for now, even though it's static.
   // We'll look at making this dynamic later!
-  state = {active: 'Home'};
+  state = { active: "Home" };
   render() {
-    const {children} = this.props;
-    const {active} = this.state;
+    const { children } = this.props;
+    const { active } = this.state;
     return (
       <ul className="nav" role="navigation">
         <NavigationContext.Provider value={this.state.active}>

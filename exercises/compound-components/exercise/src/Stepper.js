@@ -48,9 +48,7 @@ export default class Stepper extends Component {
               >
                 {step.title}
               </span>
-              {i < steps.length - 1 && (
-                <span className="status-divider" />
-              )}
+              {i < steps.length - 1 && <span className="status-divider" />}
             </React.Fragment>
           ))}
         </div>

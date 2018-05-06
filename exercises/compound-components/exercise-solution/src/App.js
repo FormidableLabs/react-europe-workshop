@@ -17,16 +17,12 @@ const steps = [
   }
 ];
 
-class App extends Component {
-  render() {
-    return (
-      <Stepper steps={steps}>
-        <Stepper.ActiveStep />
-        <Stepper.Status />
-        <Stepper.Controls />
-      </Stepper>
-    );
-  }
-}
+const App = () => (
+  <Stepper steps={steps}>
+    <StepperControls />
+    <Stepper.Status />
+    <Stepper.ActiveStep />
+  </Stepper>
+);
 
 export default App;
