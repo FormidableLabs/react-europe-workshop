@@ -1,0 +1,38 @@
+body {
+  font-family: 'Fira Sans', sans-serif;
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.radio-group {
+  display: flex;
+  width: 85px;
+  border: none;
+  border-radius: 3px;
+}
+
+.radio-group-item {
+  margin-top: 5px;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.radio-group-item input[type='radio']:checked + label {
+  color: #004bde;
+}
+
+.radio-group-item label,
+input {
+  cursor: pointer;
+}
+
+.radio-group-item label:hover {
+  text-decoration: underline;
+}
