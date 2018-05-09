@@ -20,19 +20,19 @@ Compound Components with Brandon Dail
 LUNCH
 
 ### 1:00PM - 2:00PM
-Controlled Components with Brandon Dail
+Controlled Components _with Brandon Dail_
 
 ### 2:00PM - 2:45PM
-Higher Order Components with Brandon Dail
+Higher Order Components _with Brandon Dail_
 
 ### 2:45PM - 3:00PM
 BREAK
 
 ### 3:00PM - 3:45PM
-Context Exercise with Ken Wheeler
+Context Exercise _with Ken Wheeler_
 
 ### 3:45PM - 5:00PM
-Portals with Emma Brillhart
+Portals _with Emma Brillhart_
 
 ### 5:00PM - 5:30PM
 Q&A and Wrap Up for the Day
@@ -43,39 +43,39 @@ Q&A and Wrap Up for the Day
 Set up, Q&A
 
 ### 9:35AM - 10:45AM
-Form Management w/ Formik with Emma Brillhart
+Form Management w/ Formik _with Emma Brillhart_
 
 ### 10:45AM - 11:00AM
 BREAK
 
 ### 11:00AM - 12:00PM
-Universal Components with Ken Wheeler
+Universal Components _with Ken Wheeler_
 
 ### 12:00PM - 1:00PM
 LUNCH
 
 ### 1:00PM - 2:45PM
-Managing and Deriving State with Brandon Dail
-Async Safe Patterns with Brandon Dail
-Strict Mode with Brandon Dail
-Fetching External Data with Brandon Dail
-Subscriptions with Brandon Dail
-Reading from the DOM with Brandon Dail
+Managing and Deriving State _with Brandon Dail_
+Async Safe Patterns _with Brandon Dail_
+Strict Mode _with Brandon Dail_
+Fetching External Data _with Brandon Dail_
+Subscriptions _with Brandon Dail_
+Reading from the DOM _with Brandon Dail_
 
 ### 2:45PM - 3:00PM
 BREAK
 
 ### 3:00PM - 3:30PM
-Renderless Components with Ken Wheeler
+Renderless Components _with Ken Wheeler_
 
 ### 3:30PM - 3:45PM
-Error Boundaries with Brandon Dail
+Error Boundaries _with Brandon Dail_
 
 ### 3:45PM - 4:30PM
-Testing using Jest, Enzyme and Snapshot Testing with Ken Wheeler and Brandon Dail
+Testing using Jest, Enzyme and Snapshot Testing _with Ken Wheeler and Brandon Dail_
 
 ### 4:30PM - 5:00PM
-Performance with Ken Wheeler
+Performance _with Ken Wheeler_
 
 ### 5:00PM - 5:30PM
 Q&A and Wrap Up
