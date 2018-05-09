@@ -1,0 +1,44 @@
+.pageWrapper {
+  width: 100%;
+  height: 100%;
+
+  padding: 50px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.formWrapper {
+  width: 25%;
+  height: 100%;
+
+  padding: 10px;
+  border: 1px solid black;
+
+  border-radius: 5px;
+}
+
+input[type = "text"] {
+  display: block;
+}
+
+.submitButton {
+  margin-top: 12px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contentWrapper {
+  width: 65%;
+}
+
+.techSpan {
+  text-transform: capitalize;
+}
+
+.submission {
+  margin-bottom: 20px;
+}

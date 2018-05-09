@@ -1,5 +1,7 @@
-import React, { Component, Fragment } from 'react';
-import { Formik, Form, Field, FieldArray } from 'formik';
+// Formik 
+
+import React, { Component } from 'react';
+import { Formik, Form, Field } from 'formik';
 
 import './formik-form.css';
 
@@ -7,6 +9,7 @@ export class Content extends Component {
   renderTechnologyList = submission => {
     const technologies = ['react', 'redux', 'formik', 'graphQL', 'node', 'reactNative'];
 
+    // map through the technology array to see which ones exist as `true` within the submission object
     return technologies.map(technology => {
       if (submission[technology]) {
         return <div key={`${technology}-${submission.name}`}>Has used <span className="techSpan">{technology}</span></div>
@@ -31,6 +34,7 @@ export class Content extends Component {
   render() {
     const { submissions } = this.props;
 
+    // if there are any submissions in the submissions array, display results! otherwise, display the filler content
     return <div className="contentWrapper">{submissions.length ? this.renderSubmissions(submissions)  : 'We want to put form info here!'}</div>
   };
 };
@@ -43,6 +47,7 @@ export default class FormikForm extends Component {
     }
   };
 
+  // a nice, simple submit method - and no hand-rolled change handlers necessary!
   handleSubmit = submission => {
     this.setState({
       submissions: this.state.submissions.concat(submission)
@@ -68,6 +73,7 @@ export default class FormikForm extends Component {
               node: false,
               reactNative: false
             }}
+          {/** We're using Formik with Render Props, but it can also be used as an HOC as withFormik(options) */}
             render={({ handleChange, values }) => {
               return (
                 <Form className="form">
@@ -77,6 +83,7 @@ export default class FormikForm extends Component {
                   </div>
                     <p>Which of the following technologies have you used?</p>
                     <div>
+                      {/** We're using the handleChange method passed by Formik, which eliminates the need to manually track changes */}
                       <Field type="checkbox" id="react" name="react" value="react" onChange={handleChange} checked={values.react} />
                       <label htmlFor="react">React</label>
                     </div>
@@ -100,6 +107,7 @@ export default class FormikForm extends Component {
                       <Field type="checkbox" id="reactNative" name="reactNative" value="reactNative" onChange={handleChange} checked={values.reactNative} />
                       <label htmlFor="reactNative">ReactNative</label>
                     </div>
+                  {/** A possible solution for the solo exercise */}
                     <div style={{ margin: '10px 0'}}>
                       <p>Is this your first visit to Paris?</p>
                       <Field component="select" name="firstVisit">
@@ -107,6 +115,7 @@ export default class FormikForm extends Component {
                         <option value="no">No</option>
                       </Field>
                     </div>
+                  {/** ***************************************** */}
                   <button className="submitButton" type="submit">Submit Form</button>
                 </Form>
               )
@@ -118,83 +127,3 @@ export default class FormikForm extends Component {
     )
   };
 };
-
-// import React, { Component } from 'react';
-// // import { Formik } from 'formik';
-
-// import './formik-form.css';
-
-// export class Content extends Component {
-//   render() {
-//     return <div className="contentWrapper">We want to put form info here!</div>
-//   };
-// };
-
-// export default class FormikForm extends Component {
-    // constructor() {
-    //   super();
-
-    //   this.state = {
-    //     input: '',
-    //     react: false,
-    //     redux: false,
-    //     formik: false,
-    //     graphQL: false,
-    //     node: false,
-    //     reactNative: false
-    //   }
-    // }
-//
-//   handleSubmit = () => {
-//     console.log('submitted!');
-//   }
-
-//   render() {
-//     return (
-//       <div className="pageWrapper">
-//         <div className="formWrapper">
-//           <form className="form" onSubmit={this.handleSubmit}>
-//             <div>
-//               <label htmlFor="name">What's your name?</label>
-//               <input type="text" id="name" name="name" />
-//             </div>
-//             <div>
-//               <p>Which of the following technologies have you used?</p>
-//               <div>
-//                 <input type="checkbox" id="react" name="react" value="react" />
-//                 <label htmlFor="react">React</label>
-//               </div>
-//               <div>
-//                 <input type="checkbox" id="redux" name="redux" value="redux" />
-//                 <label htmlFor="redux">Redux</label>
-//               </div>
-//               <div>
-//                 <input type="checkbox" id="formik" name="formik" value="formik" />
-//                 <label htmlFor="formik">Formik</label>
-//               </div>
-//               <div>
-//                 <input type="checkbox" id="graphQL" name="graphQL" value="graphQL" />
-//                 <label htmlFor="graphQL">GraphQL</label>
-//               </div>
-//               <div>
-//                 <input type="checkbox" id="node" name="node" value="node" />
-//                 <label htmlFor="node">Node</label>
-//               </div>
-//               <div>
-//                 <input type="checkbox" id="reactNative" name="reactNative" value="reactNative" />
-//                 <label htmlFor="reactNative">ReactNative</label>
-//               </div>
-//             </div>
-//             <button className="submitButton" type="submit">Submit Form</button>
-//           </form>
-//         </div>
-//         <Content />
-//       </div>
-//     )
-//   };
-// };
-
-// Exercises:
-// 1. Create an additional form field element that's controlled by the formik component and renders nicely to the list - use a component we haven't already, like
-// a select dropdown, radio button group, etc.
-
