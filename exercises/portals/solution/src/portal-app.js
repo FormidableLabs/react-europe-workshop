@@ -189,4 +189,3 @@ export class PortalApp extends Component {
 };
 
 export default PortalApp;
-
