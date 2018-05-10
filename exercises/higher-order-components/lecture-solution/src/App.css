@@ -24,3 +24,20 @@
 .search-bar:focus {
   border-color: coral;
 }
+
+.btn {
+  padding: 10px 15px;
+  font-size: 20px;
+  border: 1px solid #efefef;
+  border-radius: 5px;
+}
+
+.sign-in {
+  background-color: royalblue;
+  color: white;
+}
+
+.sign-in:disabled {
+  background-color: rgba(65, 105, 225, 0.5); 
+  cursor: not-allowed;
+}
