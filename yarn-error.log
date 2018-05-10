@@ -22,7 +22,7 @@ npm manifest:
     "author": "Brandon Dail <brandondail@fb.com>",
     "license": "MIT",
     "scripts": {
-      prettier: "prettier --write \"exercises/**/*.js\""
+      "prettier": "prettier --write \"exercises/**/*.js\""
     },
     "dependencies": {
       "prettier": "^1.12.1"
@@ -42,10 +42,16 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.12.1.tgz#c1ad20e803e7749faf905a409d2367e06bbe7325"
 
 Trace: 
-  SyntaxError: /Users/brandondail/Github/react-europe-workshop/package.json: Unexpected token p in JSON at position 240
-      at JSON.parse (<anonymous>)
-      at /opt/facebook/fb-kpm/lib/cli.js:1036:59
-      at Generator.next (<anonymous>)
-      at step (/opt/facebook/fb-kpm/lib/cli.js:98:30)
-      at /opt/facebook/fb-kpm/lib/cli.js:109:13
-      at <anonymous>
+  Error: Command failed.
+  Exit code: 2
+  Command: sh
+  Arguments: -c prettier --write "exercises/**/*.js"
+  Directory: /Users/brandondail/Github/react-europe-workshop
+  Output:
+  
+      at ProcessTermError.MessageError (/opt/facebook/fb-kpm/lib/cli.js:186:110)
+      at new ProcessTermError (/opt/facebook/fb-kpm/lib/cli.js:226:113)
+      at ChildProcess.<anonymous> (/opt/facebook/fb-kpm/lib/cli.js:30281:17)
+      at ChildProcess.emit (events.js:160:13)
+      at maybeClose (internal/child_process.js:943:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:220:5)

@@ -14,45 +14,45 @@
  *     ============================
  *     ====== STRETCH GOAL! =======
  *     ============================
- * 
+ *
  * Some consumers of the `withScreenDimensions` HOC might want to
  * avoid re-rendering for EVERY window resize event. Add a way
  * to pass in a `throttle` option and, if it exists, throttle
  * the resize event listener at the provided rate.
  *
- * 
+ *
  */
 
-import React, {Component} from 'react';
+import React, { Component } from "react";
 // Hmmm, maybe this will be useful?
 // import hoistStatics from 'hoist-non-react-statics'
-import './App.css';
+import "./App.css";
 // Uncomment if you're hitting the stretch goal
 // import throttle from 'lodash.throttle'
 
 class App extends Component {
   state = {
     width: window.innerWidth,
-    height: window.innerHeight,
+    height: window.innerHeight
   };
 
   componentDidMount() {
-    window.addEventListener('resize', this.onResize);
+    window.addEventListener("resize", this.onResize);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.onResize);
+    window.removeEventListener("resize", this.onResize);
   }
 
   onResize = () => {
     this.setState({
       width: window.innerWidth,
-      height: window.innerHeight,
+      height: window.innerHeight
     });
-  }
+  };
 
   render() {
-    const {width, height} = this.state;
+    const { width, height } = this.state;
     return (
       <div className="App">
         <h1>

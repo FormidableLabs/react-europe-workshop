@@ -21,19 +21,19 @@
  *
  * Some consumers of the `withScreenDimensions` HOC might want to
  * avoid re-rendering for EVERY window resize event. Add a way
- * to pass in a `throttle` option and, if it exists, throttle 
+ * to pass in a `throttle` option and, if it exists, throttle
  * the resize event listener at the provided rate.
  *
  *
  */
 
-import React, {Component} from 'react';
-import throttle from 'lodash.throttle';
-import hoistStatics from 'hoist-non-react-statics';
-import './App.css';
+import React, { Component } from "react";
+import throttle from "lodash.throttle";
+import hoistStatics from "hoist-non-react-statics";
+import "./App.css";
 
 function getDisplayName(Component) {
-  return Component.displayName || Component.name || 'Component';
+  return Component.displayName || Component.name || "Component";
 }
 
 function withScreenDimensions(WrappedComponent, options = {}) {
@@ -42,7 +42,7 @@ function withScreenDimensions(WrappedComponent, options = {}) {
       super();
       this.state = {
         width: window.innerWidth,
-        height: window.innerHeight,
+        height: window.innerHeight
       };
       if (options.throttle) {
         this.onResize = throttle(this.onResize, options.throttle);
@@ -50,23 +50,23 @@ function withScreenDimensions(WrappedComponent, options = {}) {
     }
 
     componentDidMount() {
-      window.addEventListener('resize', this.onResize);
+      window.addEventListener("resize", this.onResize);
     }
 
     componentWillUnmount() {
-      window.removeEventListener('resize', this.onResize);
+      window.removeEventListener("resize", this.onResize);
     }
 
     onResize = () => {
       this.setState({
         width: window.innerWidth,
-        height: window.innerHeight,
+        height: window.innerHeight
       });
     };
 
     render() {
-      const {forwardRef, ...props} = this.props;
-      const {width, height} = this.state;
+      const { forwardRef, ...props } = this.props;
+      const { width, height } = this.state;
       return (
         <WrappedComponent
           ref={forwardRef}
@@ -89,10 +89,10 @@ function withScreenDimensions(WrappedComponent, options = {}) {
 }
 
 class App extends Component {
-  static version = '4.2.0';
+  static version = "4.2.0";
   render() {
-    const {screenDimensions} = this.props;
-    const {width, height} = screenDimensions;
+    const { screenDimensions } = this.props;
+    const { width, height } = screenDimensions;
     return (
       <div className="App">
         <h1>
@@ -103,4 +103,4 @@ class App extends Component {
   }
 }
 
-export default withScreenDimensions(App, {throttle: 1000});
+export default withScreenDimensions(App, { throttle: 1000 });
