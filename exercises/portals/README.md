@@ -16,6 +16,7 @@ We'll be covering the basic use cases for portals and learning how to implement 
 
 ### More Resources
 * [React Documentation on Portals](https://reactjs.org/docs/portals.html)
+* [React-Portal](https://www.npmjs.com/package/react-portal)
 
 
 Portals Lecture w/ Slides - keep to about 10 minutes
