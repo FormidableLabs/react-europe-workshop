@@ -63,9 +63,3 @@ export class PortalApp extends Component {
 
 export default PortalApp;
 
-// EXERCISES:
-// 1. Create a portal-based tooltip for another click or hover target within the container div
-// 2. Have it display info passed from the parent container or trigger an event in the parent container, or both
-// 3. Bonus: Use a positioning library (see resources in the README for this folder) to position your tooltip instead of DOM measuring
-// 4. Bonus: Feel free to get creative with styling, functionality, etc. - the only thing you can't do is change the parent container to allow visible overflow!
-
