@@ -1,0 +1,8 @@
+.App {
+  font-family: 'Fira Sans', sans-serif;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+}
