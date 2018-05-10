@@ -8,3 +8,5 @@ Our goal is to take a modal that can't break out of a parent with an `overflow: 
 * It should break out of the parent component using a Portal
 * It should be positioned in a way that makes it obviously related to whatever element triggers it on hover or click
 * It should either display information about the parent component or trigger some event within the parent component
+
+* **[React Documentation on Portals](https://reactjs.org/docs/portals.html)**
