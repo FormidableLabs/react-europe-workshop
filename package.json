@@ -9,6 +9,7 @@
     "prettier": "prettier --write \"exercises/**/*.js\""
   },
   "dependencies": {
-    "prettier": "^1.12.1"
+    "prettier": "^1.12.1",
+    "react-native-web": "^0.6.1"
   }
 }

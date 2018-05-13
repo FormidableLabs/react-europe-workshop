@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width initial-scale=1 user-scalable=no" />
+  <title>Spectacle</title>
+  <link href="https://fonts.googleapis.com/css?family=Lobster+Two:400,700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700" rel="stylesheet" type="text/css">
+  <link href="https://unpkg.com/normalize.css@7/normalize.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/prop-types@15/prop-types.js"></script>
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.js"></script>
+  <script src="https://unpkg.com/spectacle@^4/dist/spectacle.js"></script>
+  <script src="https://unpkg.com/spectacle@^4/lib/one-page.js"></script>
+  <script type="text/spectacle">
+      () => {
+        // Customize the default theme.
+        const { themes: { defaultTheme } } = Spectacle;
+        const theme = defaultTheme({
+          primary: "white",
+          secondary: "#2980b9",
+        });
+        theme.screen.components.heading.h1.color = "#2980b9";
+        theme.screen.components.heading.h2.color = "#2980b9";
+        theme.screen.components.heading.h3.color = "#2980b9";
+        theme.screen.components.heading.h4.color = "#2980b9";
+        theme.screen.components.heading.h5.color = "#2980b9";
+        theme.screen.components.text.color = "black";
+        theme.screen.components.listItem.color = "black";
+
+        const { Component } = React;
+        const { Heading, CodePane } = Spectacle;
+        return (
+          <Deck transition={["fade"]} theme={theme} transitionDuration={500}>
+            <Slide>
+              <Heading>
+                Render Props
+              </Heading>
+            </Slide>
+            {
+              MarkdownSlides`
+## Whats a render prop?
+---
+### Render Props
+* Pattern used for externalizing internal component data
+* Flexible replacement for HoCs
+---
+## In short, calling this.props.children as a function
+---
+### There are two ways to do this:
+---
+### Functional Child
+              `
+            }
+            <Slide bgColor="#2a2734">
+              <CodePane textSize="2rem" lang="javascript" source={`
+<MyComponent>
+  {(args) => (
+    <p>User code</p>
+  )}
+</MyComponent>
+              `}/>
+            </Slide>
+            <Slide>
+              <Heading size={2}>
+                Children Prop
+              </Heading>
+            </Slide>
+            <Slide bgColor="#2a2734">
+              <CodePane textSize="2rem" lang="javascript" source={`
+<MyComponent
+  children={
+    (args) => <p>User code</p>
+  }
+/>
+                `}
+              />
+            </Slide>
+            <Slide>
+              <Heading size={2}>
+                So how does it work?
+              </Heading>
+            </Slide>
+            <Slide bgColor="#2a2734">
+                <CodePane textSize="2rem" lang="javascript" source={`
+class MyComponent extends React.Component {
+  render() {
+    return this.props.children("world")
+  }
+}
+                  `}
+                />
+            </Slide>
+            <Slide bgColor="#2a2734">
+                <CodePane textSize="2rem" lang="javascript" source={`
+<MyComponent>
+  {var => (
+    <p>Hello {var}</p>
+  )}
+</MyComponent>
+                  `}
+                />
+              </Slide>
+              <Slide>
+                <Heading size={2}>
+                    Exercise
+                </Heading>
+              </Slide>
+          </Deck>
+        );
+      }
+    </script>
+</body>
+
+</html>
