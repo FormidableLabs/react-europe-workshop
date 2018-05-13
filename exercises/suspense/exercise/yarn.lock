@@ -5779,7 +5779,7 @@ react-dev-utils@^5.0.1:
     strip-ansi "3.0.1"
     text-table "0.2.0"
 
-react-dom@./react-dom:
+react-dom@../react-dom:
   version "16.3.2"
   dependencies:
     fbjs "^0.8.16"
@@ -5852,7 +5852,7 @@ react-spinners@^0.3.2:
     react-emotion "^9.1.1"
     recompose "0.26.0"
 
-react@./react:
+react@../react:
   version "16.3.2"
   dependencies:
     fbjs "^0.8.16"
