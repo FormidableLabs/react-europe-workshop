@@ -1,0 +1,25 @@
+html,
+body {
+  font-family: 'Fira Sans', sans-serif;
+}
+
+.spinner {
+  height: 50vh;
+  width: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.App {
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 20px;
+}
+
+.dog-pic {
+  height: 30vw;
+}
