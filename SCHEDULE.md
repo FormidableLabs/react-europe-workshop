@@ -55,24 +55,21 @@
 * LUNCH
 
 ### 1:00PM - 2:45PM
-* Managing and Deriving State _with Brandon Dail_
 * Async Safe Patterns _with Brandon Dail_
-* Strict Mode _with Brandon Dail_
-* Fetching External Data _with Brandon Dail_
-* Subscriptions _with Brandon Dail_
-* Reading from the DOM _with Brandon Dail_
+* Suspense! _with Brandon Dail_
 
 ### 2:45PM - 3:00PM
 * BREAK
 
 ### 3:00PM - 3:30PM
+* setState Master Class _with Brandon Dail_
 * Renderless Components _with Ken Wheeler_
 
 ### 3:30PM - 3:45PM
 * Error Boundaries _with Brandon Dail_
 
 ### 3:45PM - 4:30PM
-* Testing using Jest, Enzyme and Snapshot Testing _with Ken Wheeler and Brandon Dail_
+* Testing using Jest and Snapshot Testing _with Ken Wheeler
 
 ### 4:30PM - 5:00PM
 * Performance _with Ken Wheeler_
