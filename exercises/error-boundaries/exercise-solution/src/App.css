@@ -1,0 +1,41 @@
+html,
+body {
+  font-family: 'Fira Sans', sans-serif;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.App {
+  font-size: 20px;
+}
+
+.chat-badge {
+  z-index: 9999999999999999;
+  position: absolute;
+  top: calc(100vh - 160px);
+  left: calc(100vw - 160px);
+}
+
+.spinner {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-group {
+  height: calc(100vh - 150px);
+  overflow: scroll;
+}
+
+.error-message {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+}
