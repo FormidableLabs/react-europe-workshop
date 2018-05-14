@@ -43,6 +43,214 @@
                 Universal Components
               </Heading>
             </Slide>
+            <Slide>
+              <Heading>
+                What makes a component universal?
+              </Heading>
+            </Slide>
+            <Slide>
+              <List>
+                <ListItem>Uses react-primitives or react-native-web</ListItem>
+                <ListItem>Works on both web & native</ListItem>
+                <ListItem>Native first approach</ListItem>
+                <ListItem>Works by aliasing the react-native module</ListItem>
+              </List>
+            </Slide>
+            <Slide>
+              <Heading>
+                Lets learn some React Native
+              </Heading>
+            </Slide>
+            <Slide>
+              <Heading size={2}>
+                React Native has no DOM.
+              </Heading>
+            </Slide>
+            <Slide>
+              <List>
+                <ListItem>Apps are created with primitives like &lt;View&gt; and &lt;Text&gt;</ListItem>
+                <ListItem>The Text primitive exists because text can't be standalone</ListItem>
+                <ListItem>Other primitives map directly to mobile UI</ListItem>
+                <ListItem>Styles are created using objects via the StyleSheet API</ListItem>
+              </List>
+            </Slide>
+            <Slide bgColor="#2a2734">
+              <CodePane textSize="2rem" lang="javascript" source={`
+return (
+  <div>
+    <p>
+      Hello World
+    </p>
+  </div>
+)
+                    `}
+              />
+          </Slide>
+          <Slide bgColor="#2a2734">
+            <CodePane textSize="2rem" lang="javascript" source={`
+return (
+  <View>
+    <Text>
+      Hello World
+    </Text>
+  </View>
+)
+                  `}
+            />
+          </Slide>
+          <Slide>
+            <Heading size={2}>
+              React Native also has some other mobile centric primitives
+            </Heading>
+          </Slide>
+          <Slide>
+            <List>
+              <ListItem>ActivityIndicator - a prebuilt platform specific loading spinner</ListItem>
+              <ListItem>FlatList - High performance list primitive</ListItem>
+              <ListItem>TextInput - Native equivalent of a text input</ListItem>
+              <ListItem>Image - Used to display images</ListItem>
+              <ListItem>Touchables - Touch based button equivalents</ListItem>
+              <ListItem>ETC....</ListItem>
+            </List>
+          </Slide>
+          <Slide>
+            <Heading size={2}>
+              Buttons
+            </Heading>
+          </Slide>
+          <Slide>
+            <List>
+              <ListItem>TouchableOpacity - Native style iOS button</ListItem>
+              <ListItem>TouchableHighlight - Button with press highlight</ListItem>
+              <ListItem>TouchableWithoutFeedback - Button with no feedback</ListItem>
+              <ListItem>TouchableNativeFeedback - Native style Android button</ListItem>
+            </List>
+          </Slide>
+          <Slide bgColor="#2a2734">
+              <CodePane textSize="2rem" lang="javascript" source={`
+return (
+  <TouchableOpacity onPress={this.onClick}>
+    <Text>PRESS ME</Text>
+  </TouchableOpacity>
+);
+                    `}
+              />
+            </Slide>
+            <Slide>
+              <Heading size={2}>
+                Styling
+              </Heading>
+            </Slide>
+            <Slide>
+              <List>
+                <ListItem>React Native has a css subset implemented using css-in-js</ListItem>
+                <ListItem>All layout is flexbox based</ListItem>
+                <ListItem>Most of CSS is supported</ListItem>
+                <ListItem>Style declarations created with the StyleSheet API</ListItem>
+              </List>
+            </Slide>
+            <Slide bgColor="#2a2734">
+              <CodePane textSize="2rem" lang="javascript" source={`
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  button: {
+    background: 'blue',
+    paddingHorizontal: 20
+  }
+});
+                    `}
+              />
+            </Slide>
+            <Slide bgColor="#2a2734">
+              <CodePane textSize="2rem" lang="javascript" source={`
+return (
+  <View style={styles.container}>
+    <TouchableOpacity onPress={...}>
+      <View style={styles.button}>
+        <Text>HEY</Text>
+      </View>
+    </TouchableOpacity>
+  </View>
+);
+                    `}
+              />
+            </Slide>
+            <Slide>
+              <Heading size={2}>
+                Animations
+              </Heading>
+            </Slide>
+            <Slide bgColor="#2a2734">
+                <CodePane textSize="2rem" lang="javascript" source={`
+class MyComponent extends React.Component {
+  scale = new Animated.Value(1);
+  render() {
+    <Animated.View style={{
+      transform: [
+        {scale: this.scale}
+      ]
+    }}/>
+  }
+}
+                      `}
+                />
+              </Slide>
+              <Slide bgColor="#2a2734">
+                <CodePane textSize="2rem" lang="javascript" source={`
+class MyComponent extends React.Component {
+  onClick = () => {
+    Animated.timing(
+      this.scale,
+      {
+        toValue: 2,
+      }
+    ).start();
+  }
+}
+                      `}
+                />
+              </Slide>
+              <Slide>
+                <Heading size={2}>
+                  Gestures
+                </Heading>
+              </Slide>
+              <Slide>
+                <List>
+                  <ListItem>Gestures handled by an API called PanResponder</ListItem>
+                  <ListItem>Initialize a PanResponder with options</ListItem>
+                  <ListItem>It is then spread onto the target element</ListItem>
+                </List>
+              </Slide>
+              <Slide bgColor="#2a2734">
+                <CodePane textSize="2rem" lang="javascript" source={`
+componentWillMount() {
+  this.responder = PanResponder.create({
+    onStartShouldSetPanResponder: ...,
+    onMoveShouldSetPanResponder: ...,
+    onPanResponderGrant: ...,
+    onPanResponderMove: ...,
+    onPanResponderRelease: ...,
+    onPanResponderTerminate: ...
+  });
+}
+                      `}
+                />
+              </Slide>
+              <Slide bgColor="#2a2734">
+                <CodePane textSize="2rem" lang="javascript" source={`
+render() {
+  return (
+    <View {...this.responder.panHandlers} />
+  );
+}
+                      `}
+                />
+              </Slide>
           </Deck>
         );
       }
