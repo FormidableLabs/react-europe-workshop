@@ -1,5 +1,5 @@
 /**
- * Higher-Order Component Exericse:
+ * HIGHER OREDER COMPONENT EXERCISE
  *
  * The App component dynamically renders the current window
  * dimensions. Implement a `withScreenDimensions` higher-order
@@ -11,9 +11,7 @@
  * 2. Works with components that have static properties
  * 3. Can forward refs to the component its wrapping
  *
- *     ============================
- *     ====== STRETCH GOAL! =======
- *     ============================
+ * STRETCH GOAL
  *
  * Some consumers of the `withScreenDimensions` HOC might want to
  * avoid re-rendering for EVERY window resize event. Add a way

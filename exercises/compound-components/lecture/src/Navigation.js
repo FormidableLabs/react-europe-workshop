@@ -1,21 +1,26 @@
-import React, { Component } from "react";
-import cx from "classnames";
-import "./App.css";
+import React, {Component} from 'react';
+import cx from 'classnames';
+import './App.css';
 
-export default class Navigation extends React.Component {
+
+const NavigationItem = ({label, to, isActive }) => (
+  <li
+  className={cx({
+    'nav-active': isActive,
+  })}>
+  <a href={item.to}>{item.label}</a>
+</li>
+)
+
+  export default class Navigation extends React.Component {
+  static Item = NavigationItem;
   // Pretend this is dynamic and must be read from state!
-  state = { active: "Home" };
+  state = {active: 'Home'};
   render() {
-    const { items } = this.props;
+    const {children} = this.props;
     return (
       <ul className="nav" role="navigation">
-        {items.map(item => (
-          <li
-            className={cx({ "nav-active": this.state.active === item.label })}
-          >
-            <a href={item.to}>{item.label}</a>
-          </li>
-        ))}
+        {children}
       </ul>
     );
   }
