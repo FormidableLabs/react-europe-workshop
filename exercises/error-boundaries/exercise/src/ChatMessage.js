@@ -5,7 +5,8 @@ const ChatMessage = ({ author, message }) => (
     <div className="d-flex w-100 justify-content-between">
       <h5
         style={{
-          color: author === "Me" ? "coral" : undefined
+          // HOPE THIS WORKS!
+          color: author === "Me" ? message.color.rgb : undefined
         }}
         className="mb-1"
       >
