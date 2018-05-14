@@ -1,12 +1,15 @@
 // @format
-import React, { Component } from "react";
+import React, {Component} from 'react';
 
 const StepContext = React.createContext();
 
 const StepperPrevious = () => (
   <StepContext.Consumer>
-    {({ hasPrevious, stepBack }) => (
-      <button className="step-btn" disabled={!hasPrevious} onClick={stepBack}>
+    {({hasPrevious, stepBack}) => (
+      <button
+        className="step-btn"
+        disabled={!hasPrevious}
+        onClick={stepBack}>
         Previous
       </button>
     )}
@@ -15,8 +18,11 @@ const StepperPrevious = () => (
 
 const StepperNext = () => (
   <StepContext.Consumer>
-    {({ hasNext, stepForward }) => (
-      <button className="step-btn" disabled={!hasNext} onClick={stepForward}>
+    {({hasNext, stepForward}) => (
+      <button
+        className="step-btn"
+        disabled={!hasNext}
+        onClick={stepForward}>
         Next
       </button>
     )}
@@ -32,18 +38,22 @@ const StepperControls = () => (
 
 const StepperStatus = () => (
   <StepContext.Consumer>
-    {({ steps, stepIndex, goToIndex }) => (
+    {({steps, stepIndex, goToIndex}) => (
       <div className="stepper-status">
         {steps.map((step, i) => (
-          <React.Fragment>
+          <React.Fragment key={step.title}>
             <span
               className="status-item"
               onClick={() => goToIndex(i)}
-              style={{ color: i === stepIndex ? "#000000" : "#aaaaaa" }}
-            >
+              style={{
+                color:
+                  i === stepIndex ? '#000000' : '#aaaaaa',
+              }}>
               {step.title}
             </span>
-            {i < steps.length - 1 && <span className="status-divider" />}
+            {i < steps.length - 1 && (
+              <span className="status-divider" />
+            )}
           </React.Fragment>
         ))}
       </div>
@@ -53,7 +63,7 @@ const StepperStatus = () => (
 
 const ActiveStep = () => (
   <StepContext.Consumer>
-    {({ stepIndex, steps }) => {
+    {({stepIndex, steps}) => {
       const activeStep = steps[stepIndex];
       return (
         <div className="step">
@@ -77,13 +87,13 @@ export default class Stepper extends Component {
   };
 
   stepForward = () => {
-    const { onChange, stepIndex } = this.props;
-    this.props.onChange(stepIndex + 1);
+    const {onChange, stepIndex} = this.props;
+    onChange(stepIndex + 1);
   };
 
   stepBack = () => {
-    const { onChange, stepIndex } = this.props;
-    this.props.onChange(stepIndex - 1);
+    const {onChange, stepIndex} = this.props;
+    onChange(stepIndex - 1);
   };
 
   goToIndex = index => {
@@ -91,9 +101,12 @@ export default class Stepper extends Component {
   };
 
   getContext() {
-    const { steps, stepIndex, canMoveBack, canMoveForward } = this.props;
-    const hasPrevious = stepIndex > 0;
-    const hasNext = stepIndex < steps.length - 1;
+    const {
+      steps,
+      stepIndex,
+      canMoveBack,
+      canMoveForward,
+    } = this.props;
     return {
       stepIndex,
       stepForward: this.stepForward,
@@ -101,7 +114,7 @@ export default class Stepper extends Component {
       goToIndex: this.goToIndex,
       steps,
       hasNext: canMoveForward(stepIndex),
-      hasPrevious: canMoveBack(stepIndex)
+      hasPrevious: canMoveBack(stepIndex),
     };
   }
 

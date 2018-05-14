@@ -34,7 +34,7 @@ const StepperStatus = () => (
     {({ steps, activeStepIndex, goToIndex }) => (
       <div className="stepper-status">
         {steps.map((step, i) => (
-          <React.Fragment>
+          <React.Fragment key={step.title}>
             <span
               className="status-item"
               onClick={() => goToIndex(i)}

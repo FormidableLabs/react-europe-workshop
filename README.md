@@ -5,4 +5,32 @@
 Welcome to Intermediate React.js! We're excited to have you. We'll be covering a variety of topics over the next few days, including Context, Universal Components, Async Safe Patterns, Portals, and more. [See a full schedule here](./SCHEDULE.md).
 
 ## Set-Up
-Please fork the repo and clone it down to your personal computer. All of the exercises and solutions that we'll cover over the next two days are contained in subfolders.
+
+### What you need
+
+To install and run these exercises you'll need:
+
+1. [Node](https://nodejs.org/en/) (v8.0 or later please) 
+2. [Yarn](https://yarnpkg.com/)
+3. [Git](https://git-scm.com/) (you probably already have this)
+
+
+### Installation
+
+Please clone the repo to your personal computer. Feel free to fork it first if you want to mess around with stuff later on. All of the exercises and solutions that we'll cover over the next two days are contained in subfolders.
+
+
+```
+git clone https://github.com/aweary/react-europe-workshop
+cd react-europe-workshop
+```
+
+Install the dependencies for every excercise. **This might take a long time**
+
+```
+yarn
+```
+
+When we're about to start an exercise, the instructor will tell you how to start it. It will usually just involve cd'ing into the {session}/exercise folder and running `yarn start`
+
+
