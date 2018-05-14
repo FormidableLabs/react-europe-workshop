@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+}
+
+.btn {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 5px 20px;
+  font-size: 50px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.btn:active {
+  background-color: darkgreen;
+}
