@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Stepper from "./Stepper";
 import "./App.css";
 
