@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 
+// Use React context to provide implicit step state
 const StepContext = React.createContext();
 
+// Button to go to the previous step
 const StepperPrevious = () => (
   <StepContext.Consumer>
     {({ hasPrevious, stepBack }) => (
@@ -12,6 +14,7 @@ const StepperPrevious = () => (
   </StepContext.Consumer>
 );
 
+// Button to go to the next step
 const StepperNext = () => (
   <StepContext.Consumer>
     {({ hasNext, stepForward }) => (
@@ -22,6 +25,7 @@ const StepperNext = () => (
   </StepContext.Consumer>
 );
 
+// Controls just renders the Next/Previous buttons!
 const StepperControls = () => (
   <React.Fragment>
     <StepperNext />
@@ -29,12 +33,14 @@ const StepperControls = () => (
   </React.Fragment>
 );
 
+// Shows the current step, lets users 
+// move directly to any step 
 const StepperStatus = () => (
   <StepContext.Consumer>
     {({ steps, activeStepIndex, goToIndex }) => (
       <div className="stepper-status">
         {steps.map((step, i) => (
-          <React.Fragment>
+          <React.Fragment key={step.title}>
             <span
               className="status-item"
               onClick={() => goToIndex(i)}
@@ -50,6 +56,7 @@ const StepperStatus = () => (
   </StepContext.Consumer>
 );
 
+// The currently active step
 const ActiveStep = () => (
   <StepContext.Consumer>
     {({ activeStepIndex, steps }) => {

@@ -36,7 +36,7 @@ export default class Stepper extends Component {
       <div className="stepper">
         <div className="stepper-status">
           {steps.map((step, i) => (
-            <React.Fragment>
+            <React.Fragment key={step.title}>
               <span
                 className="status-item"
                 onClick={() =>
