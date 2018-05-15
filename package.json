@@ -2,12 +2,13 @@
   "name": "react-europe-workshop",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/aweary/react-europe-workshop.git",
+  "repository":
+    "https://github.com/aweary/react-europe-workshop.git",
   "author": "Brandon Dail <brandondail@fb.com>",
   "license": "MIT",
   "scripts": {
-    "prettier": "prettier --write \"exercises/**/*.js\"",
-    "postinstall": "node install.js"
+    "prettier":
+      "prettier --write \"exercises/**/*.js\""
   },
   "dependencies": {
     "chalk": "^2.4.1",

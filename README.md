@@ -29,6 +29,7 @@ Install the dependencies for every excercise. **This might take a long time**
 
 ```
 yarn
+node install.js
 ```
 
 When we're about to start an exercise, the instructor will tell you how to start it. It will usually just involve cd'ing into the {session}/exercise folder and running `yarn start`

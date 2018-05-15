@@ -3,8 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@aweary/react": "latest",
-    "@aweary/react-dom": "latest",
     "@mikemcbride/dad-jokes": "^1.0.0",
     "chance": "^1.0.16",
     "fuzzysearch": "^1.0.3",
