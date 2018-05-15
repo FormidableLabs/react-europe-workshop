@@ -7,6 +7,8 @@ import "./formik-form.css";
 
 export class Content extends Component {
   renderTechnologyList = submission => {
+    // if you had a lot of data or wanted this to be dynamic you'd handle it differently
+    // but this works fine for our basic use case!
     const technologies = [
       "react",
       "redux",
