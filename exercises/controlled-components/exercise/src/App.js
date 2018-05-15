@@ -27,7 +27,7 @@
  *
  */
 
-import React, { Component } from "react";
+import React from "react";
 import Stepper from "./Stepper";
 import "./App.css";
 
@@ -43,6 +43,7 @@ const steps = [
   {
     title: "Third Step!",
     content: "THIRD STEP YOU MADE IT GJ!"
+  },
 ];
 
 const App = () => (
