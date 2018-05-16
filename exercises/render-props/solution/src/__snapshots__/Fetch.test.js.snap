@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Fetch Component renders a snapshot that is good 1`] = `
+<p
+  style={
+    Object {
+      "color": "red",
+    }
+  }
+>
+  YAY
+</p>
+`;

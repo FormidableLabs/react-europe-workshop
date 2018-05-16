@@ -1,12 +1,5 @@
 import React, { Component } from 'react';
 
-const fakeFetch = url =>
-  new Promise(resolve => {
-    setTimeout(() => {
-      resolve('HEY');
-    }, 1000);
-  });
-
 class Fetch extends Component {
   state = {
     loading: true,
@@ -14,7 +7,8 @@ class Fetch extends Component {
     data: null,
   };
   componentDidMount() {
-    fakeFetch(this.props.url)
+    fetch(this.props.url)
+      .then(res => res.json())
       .then(data => {
         this.setState({
           data,
