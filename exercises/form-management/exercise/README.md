@@ -2,11 +2,12 @@
 
 ## Code Along
 
-We're going to take the existing, non-functional form code and modify it using Formik to build a clean, easily-extendable form component that collects information and displays submissions in an adjacent `div`. 
+We're going to take the existing, non-functional form code and modify it using Formik to build a clean, easily-extendable form component that collects information and displays submissions in an adjacent `div` - we'll get through the text input element together. 
 
 ## Solo Exercise
 
-* Add a form component that we haven't used yet (like select, radio group, etc.) to create an additional input on the form and display it along with the rest of the submission in the `Content` component.
-* Bonus: If you have time, add a couple more form components to practice! Extra bonus for using a Formik `FieldArray` component.
+* Convert the checkboxes to Formik `Field` elements.
+* For each technology, print a string under the submission name in the `Content` component that says "Has used [technology]"" if the value is `true`, or "Has not used [technology]" if the value is `false`.
+* Add a select or radio group component to the form and nicely print the submitted value along with the rest of the submission values.
 
 * **[Formik Documentation](https://github.com/jaredpalmer/formik)**
