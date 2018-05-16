@@ -35,3 +35,9 @@ node install.js
 When we're about to start an exercise, the instructor will tell you how to start it. It will usually just involve cd'ing into the {session}/exercise folder and running `yarn start`
 
 
+## Resources on Async Rendering
+
+* [Andrew Clark's visualizations](https://twitter.com/acdlite/status/978412930973687808)
+* [Stack Trace Screenshots](https://twitter.com/aweary/status/913619299087949824)
+* [Update on Async Rendering](https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html)
+* [Sneak Peek: Beyond React 16](https://reactjs.org/blog/2018/03/01/sneak-peek-beyond-react-16.html)
