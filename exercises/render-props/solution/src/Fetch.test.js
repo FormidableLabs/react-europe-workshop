@@ -58,4 +58,31 @@ describe('Fetch Component', () => {
       done();
     }, 300);
   });
+
+  it('should surface request errors', done => {
+    global.fetch.mockReturnValue(
+      new Promise((resolve, reject) => {
+        setTimeout(() => {
+          reject('Noooooooo');
+        }, 200);
+      })
+    );
+
+    let result;
+
+    const tree = renderer.create(
+      <Fetch url="whatever">
+        {data => {
+          console.log(data);
+          result = data;
+          return null;
+        }}
+      </Fetch>
+    );
+
+    setTimeout(() => {
+      expect(result.error).toBe('Noooooooo');
+      done();
+    }, 300);
+  });
 });
